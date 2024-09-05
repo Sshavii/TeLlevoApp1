@@ -1,27 +1,33 @@
-#container {
-  text-align: center;
-
+ion-card {
+  background-color: #b6b6b6; 
+  padding: 20px; 
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+   box-shadow: 0 0 0 4px transparent, 0 0 0 5px transparent; /* Inicialmente vacío */
+  background-clip: padding-box; /* Hace que el fondo interno no sobresalga en los bordes */
+}
+ion-card::before {
+  content: '';
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1; /* Coloca el pseudoelemento detrás del contenido */
+  background: linear-gradient(45deg, #F1B634, #152a9f); /* Gradiente de colores */
+  border-radius: 12px; /* Asegura que el borde tenga el mismo radio que el card */
+}
+body {
+  background-color: #f0f0f0;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.button {
+  --background: #F1B634;
+  color: white;
 }
