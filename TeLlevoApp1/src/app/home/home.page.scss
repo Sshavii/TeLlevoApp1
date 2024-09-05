@@ -4,7 +4,7 @@ ion-card {
   border-radius: 10px;
   width: auto;
   height: auto;
-   box-shadow: 0 0 0 4px transparent, 0 0 0 5px transparent; /* Inicialmente vacío */
+  box-shadow: 0 0 0 4px transparent, 0 0 0 5px transparent; /* Inicialmente vacío */
   background-clip: padding-box; /* Hace que el fondo interno no sobresalga en los bordes */
 }
 ion-card::before {
@@ -15,11 +15,11 @@ ion-card::before {
   right: -2px;
   bottom: -2px;
   z-index: -1; /* Coloca el pseudoelemento detrás del contenido */
-  background: linear-gradient(45deg, #F1B634, #152a9f); /* Gradiente de colores */
+  background: linear-gradient(45deg, #152a9f,#F1B634); /* Gradiente de colores */
   border-radius: 12px; /* Asegura que el borde tenga el mismo radio que el card */
 }
 body {
-  background-color: #f0f0f0;
+  background-color: #d8d8d8;
 }
 .button-container {
   display: flex;
@@ -30,4 +30,8 @@ body {
 .button {
   --background: #F1B634;
   color: white;
+}
+ion-header {
+  --background: #007bff; /* Color de fondo del header */
+  --color: #ffffff; /* Color del texto en el header */
 }
