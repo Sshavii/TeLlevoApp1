@@ -1,11 +1,23 @@
+.cards{
+  display:flex;
+  height: auto;
+  width: auto;
+}
+.logo{
+  margin: auto  ;
+  display: flex;
+  justify-content: center;
+}
+ion-toolbar{
+  background-color: var(--ion-color-header);
+}
 ion-card {
   background-color: #b6b6b6; 
   padding: 20px; 
   border-radius: 10px;
-  width: auto;
-  height: auto;
-   box-shadow: 0 0 0 4px transparent, 0 0 0 5px transparent; /* Inicialmente vacío */
+  box-shadow: 0 0 0 4px transparent, 0 0 0 5px transparent; /* Inicialmente vacío */
   background-clip: padding-box; /* Hace que el fondo interno no sobresalga en los bordes */
+  
 }
 ion-card::before {
   content: '';

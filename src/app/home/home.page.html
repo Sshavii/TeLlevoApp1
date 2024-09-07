@@ -1,9 +1,37 @@
-<body>
-  <ion-card>
-    <img alt="Taxi" src="./assets/img/inicio_ionic.png">
-    <div class="button-container">
-      <ion-button class="button">Pedir Auto</ion-button>
-    </div>
-  </ion-card>
+<ion-menu side="start" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/inicio">Inicio</ion-item>
+      <ion-item routerLink="/perfil">Perfil</ion-item>
+      <ion-item routerLink="/configuracion">Configuración</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-header>
+  <ion-toolbar color="header">
+    <img class="logo" src="./assets/img/duocuc.png" alt="logo duroc">  
+  </ion-toolbar>
+</ion-header>
 
-</body>
+<ion-content>
+  <div class="cards">
+    <ion-card>
+      <img alt="Taxi" src="./assets/img/inicio_ionic.png">
+      <div class="button-container">
+        <ion-button class="button">Pedir Auto</ion-button>
+      </div>
+    </ion-card>
+    
+    <ion-card>
+      <img alt="Taxi" src="./assets/img/inicio_ionic.png">
+      <div class="button-container">
+        <ion-button class="button">Ofrecer Viaje</ion-button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
