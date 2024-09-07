@@ -1,0 +1,64 @@
+/* Estilos para la vista de login */
+ion-header {
+    --background: #F1B634; /* Color de fondo del header */
+  }
+  
+  ion-toolbar {
+    --background: #ffffff; /* Color de fondo del toolbar */
+    text-align: center;
+  }
+  
+  ion-title {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    width: 100%; /* Asegura que el ion-title ocupe todo el ancho del toolbar */
+  }
+  
+  .header-logo {
+    max-height: 40px; /* Ajusta la altura máxima según tus necesidades */
+    width: auto;
+  }
+  
+  ion-content {
+    --background: #ffffff; /* Color de fondo de la vista */
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 16px;
+  }
+  
+  ion-card {
+    width: 100%;
+    max-width: 400px; /* Ajusta el ancho máximo del card */
+    border-radius: 10px;
+    background-color: #ffffff; /* Fondo blanco del card */
+  }
+  
+  ion-card-header {
+    text-align: center;
+  }
+  ion-card-content{
+    color: #ffffff;
+  }
+  ion-card-title {
+    font-size: 1.5rem;
+    color: #666666;
+  }
+  
+  ion-item {
+    margin-bottom: 16px;
+    background-color: #ffffff;
+    color: #666666;
+  }
+  
+  ion-button {
+    margin-top: 16px;
+    --background: #F1B634;
+    color: white;
+  }
+  
