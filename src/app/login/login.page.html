@@ -5,6 +5,9 @@
 </ion-header>
 <body>
   <ion-content>
+    <div class="image-container">
+      <img src="assets/img/photo_inicio.png" alt="Login Image" class="responsive-image">
+    </div>
     <div class="login-container">
       <ion-card>
         <ion-card-header>
@@ -22,6 +25,10 @@
               <ion-label position="floating">Contraseña</ion-label>
               <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
             </ion-item>
+
+            <ion-text color="primary" class="reset-password-text">
+              <a href="/restablecer-contraseña.page.html">¿Olvidaste tu contraseña?</a>
+            </ion-text>
   
             <ion-button expand="full" type="submit" [disabled]="!loginForm.form.valid">Iniciar Sesión</ion-button>
           </form>

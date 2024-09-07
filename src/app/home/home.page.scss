@@ -36,7 +36,7 @@ ion-footer ion-toolbar {
 }
 
 ion-footer ion-button {
-  font-size: 1.2em; /* Ajusta el tamaño del botón */
+  font-size: 1em; /* Ajusta el tamaño del botón */
 }
 ion-card::before {
   content: '';
@@ -60,7 +60,7 @@ body {
 
 .button {
   --background: #F1B634;
-  color: white;
+    color: white;
 }
 ion-header {
   --background: #007bff; /* Color de fondo del header */
