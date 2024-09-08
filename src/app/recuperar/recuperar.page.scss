@@ -77,11 +77,9 @@ ion-header {
   .responsive-image {
     max-width: 100%;
     height: auto;
-    max-height: 200px;
+    max-height: 250px;
     margin-bottom: 0px;
   }
-  
-  /* Estilo para el enlace de Volver al Inicio de Sesión */
   .back-to-login-text {
     display: block;
     text-align: center;
@@ -90,7 +88,7 @@ ion-header {
   }
   
   .back-to-login-text a {
-    color: #F1B634;
+    color: primary;
     text-decoration: none;
   }
   
