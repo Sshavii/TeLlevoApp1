@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,14 +7,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  email: string = '';
-  password: string = '';
+  loginForm: FormGroup;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@duocuc\.cl$/)]], 
+      password: ['', [Validators.required, Validators.minLength(8), this.passwordValidator]],
+    });
+  }
+
+  passwordValidator(control: AbstractControl): ValidationErrors | null {
+    const password = control.value;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (!hasUpperCase || !hasSpecialChar) {
+      return { invalidPassword: true };
+    }
+    return null; 
+  }
 
   onSubmit() {
-    // Maneja el envío del formulario
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
+    if (this.loginForm.valid) {
+      console.log('Formulario válido', this.loginForm.value);
+    } else {
+      console.log('Formulario inválido');
+    }
   }
 }
