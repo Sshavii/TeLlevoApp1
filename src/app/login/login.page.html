@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="image-container" *ngIf="true" @fadeIn>
+  <div class="image-container">
     <img src="./assets/img/photo_inicio.png" alt="Imagen Inicio" class="responsive-image">
   </div>
 
@@ -47,8 +47,10 @@
           <ion-loading trigger="open-loading" message="Iniciando Sesión" [duration]="100" spinner="circles"></ion-loading>
         </form>
 
-        <ion-text color="primary" class="reset-password-text">
-          <a href="/recuperar">Restablecer Contraseña</a>
+        <ion-text color="primary" class="recuperar-contraseña">
+          <a [routerLink]="['/recuperar']" class="recuperar-link">
+            Restablecer Contraseña
+          </a>
         </ion-text>
       </ion-card-content>
     </ion-card>

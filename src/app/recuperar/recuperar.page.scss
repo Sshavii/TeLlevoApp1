@@ -80,19 +80,13 @@ ion-header {
     max-height: 300px;
     margin-bottom: 0px;
   }
-  .back-to-login-text {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
+  .volver-link {
+    text-decoration: none; 
+    color: #007bff;
+    font-weight: bold; 
+    cursor: pointer;
   }
   
-  .back-to-login-text a {
-    color: primary;
-    text-decoration: none;
-  }
-  
-  .back-to-login-text a:hover {
+  .volver-link:hover {
     text-decoration: underline;
   }
-  

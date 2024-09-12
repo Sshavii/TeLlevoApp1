@@ -80,11 +80,13 @@ ion-button {
   max-height: 200px;
   margin-bottom: 0px;
 }
-.reset-password-text a {
-  color: #342afd;
-  text-decoration: none;
+.recuperar-link {
+  text-decoration: none; 
+  color: #007bff; 
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.reset-password-text a:hover {
-  text-decoration: underline;
+.recuperar-link:hover {
+  text-decoration: underline; 
 }

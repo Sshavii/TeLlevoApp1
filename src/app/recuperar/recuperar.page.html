@@ -23,12 +23,12 @@
           <ion-input type="email"></ion-input>
         </ion-item>
 
-        <ion-button expand="block">Enviar Enlace de Restablecimiento</ion-button>
+        <ion-button color="primary" expand="block">Enviar Enlace de Restablecimiento</ion-button>
 
-        <ion-text color="primary" class="back-to-login-text">
-          <ion-button [routerLink]="['/login']">
+        <ion-text color="primary" class="volver-inicio">
+          <a [routerLink]="['/login']" class="volver-link">
             Volver
-          </ion-button>
+          </a>
         </ion-text>
       </ion-card-content>
     </ion-card>
