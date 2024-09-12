@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar color="header">
     <img class="logo" src="./assets/img/duocuc.png" alt="logo duroc">  
@@ -6,6 +5,9 @@
 </ion-header>
 
 <ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <ion-card>
+    <ion-card-title>Bienvenido {{ userEmail }}</ion-card-title>
+  </ion-card>
   <div class="cards">
     <ion-card class="servicio">
       <img alt="Taxi" src="./assets/img/inicio_ionic.png">
