@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="image-container">
+  <div class="image-container" *ngIf="true" @fadeIn>
     <img src="./assets/img/photo_inicio.png" alt="Imagen Inicio" class="responsive-image">
   </div>
 
@@ -41,7 +41,10 @@
             La contraseña debe contener al menos una mayúscula y un carácter especial.
           </ion-text>
 
-          <ion-button expand="block" color="primary" [disabled]="loginForm.invalid">Iniciar Sesión</ion-button>
+          <ion-button [routerLink]="['/home']" id="open-loading" expand="block" color="primary" [disabled]="loginForm.invalid">
+            Iniciar Sesión
+          </ion-button>
+          <ion-loading trigger="open-loading" message="Iniciando Sesión" [duration]="100" spinner="circles"></ion-loading>
         </form>
 
         <ion-text color="primary" class="reset-password-text">
