@@ -26,7 +26,9 @@
         <ion-button expand="block">Enviar Enlace de Restablecimiento</ion-button>
 
         <ion-text color="primary" class="back-to-login-text">
-          <a href="/login">Volver al Inicio de Sesión</a>
+          <ion-button [routerLink]="['/login']">
+            Volver
+          </ion-button>
         </ion-text>
       </ion-card-content>
     </ion-card>
