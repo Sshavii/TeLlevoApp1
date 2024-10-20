@@ -1,45 +1,60 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title>
-        <img src="./assets/img/duocuc.png" alt="Logo" class="header-logo">
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <div class="image-container">
-      <img src="./assets/img/register2_photo.png" alt="Register Image" class="responsive-image">
-    </div>
-  
-    <div class="reset-password-container">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Registrarse</ion-card-title>
-        </ion-card-header>
-  
-        <ion-card-content>
-            <ion-item>
-                <ion-label position="floating">Nombre Completo</ion-label>
-                <ion-input type="full-name"></ion-input>
-              </ion-item>
-            <ion-item>
-            <ion-label position="floating">Correo Electrónico</ion-label>
-            <ion-input type="email"></ion-input>
-          </ion-item>
+  <ion-toolbar>
+    <ion-title>
+      <img src="./assets/img/duocuc.png" alt="Logo DUOC" class="header-logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="image-container">
+    <img src="./assets/img/photo_inicio.png" alt="Imagen Registro" class="responsive-image">
+  </div>
+
+  <div class="register-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Registrarse</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <!-- Campo Nombre de Usuario -->
           <ion-item>
-            <ion-label position="floating">Dirección</ion-label>
-            <ion-input type="adress"></ion-input>
+            <ion-label position="floating">Nombre de Usuario</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
           </ion-item>
-  
-          <ion-button color="primary" expand="block">Crear Usuario</ion-button>
-  
-          <ion-text color="primary" class="volver-inicio">
-            <a [routerLink]="['/login']" class="volver-link">
-              Volver
-            </a>
+          <ion-text color="danger" *ngIf="registerForm.get('username')?.hasError('required') && registerForm.get('username')?.touched">
+            El nombre de usuario es requerido.
           </ion-text>
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </ion-content>
-  
+
+          <!-- Campo Contraseña -->
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched">
+            La contraseña debe tener al menos 8 caracteres.
+          </ion-text>
+
+          <!-- Campo Repetir Contraseña -->
+          <ion-item>
+            <ion-label position="floating">Repetir Contraseña</ion-label>
+            <ion-input type="password" formControlName="confirmPassword"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched">
+            Las contraseñas no coinciden.
+          </ion-text>
+
+          <ion-button type="submit" expand="block" color="primary" [disabled]="registerForm.invalid">
+            Registrarse
+          </ion-button>
+        </form>
+
+        <ion-text color="primary" class="back-to-login-text">
+          <a [routerLink]="['/login']">Volver al Inicio de Sesión</a>
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
