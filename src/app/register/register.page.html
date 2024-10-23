@@ -19,7 +19,6 @@
 
       <ion-card-content>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-          <!-- Campo Nombre de Usuario -->
           <ion-item>
             <ion-label position="floating">Nombre de Usuario</ion-label>
             <ion-input type="text" formControlName="username"></ion-input>
@@ -28,7 +27,6 @@
             El nombre de usuario es requerido.
           </ion-text>
 
-          <!-- Campo Contraseña -->
           <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
@@ -37,7 +35,6 @@
             La contraseña debe tener al menos 8 caracteres.
           </ion-text>
 
-          <!-- Campo Repetir Contraseña -->
           <ion-item>
             <ion-label position="floating">Repetir Contraseña</ion-label>
             <ion-input type="password" formControlName="confirmPassword"></ion-input>
