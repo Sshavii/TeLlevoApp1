@@ -1,0 +1,15 @@
+{
+    "Usuarios": [
+        {
+            "id": 1,
+            "email": "ju.perez@duocuc.cl",
+            "Nombre": "Juan Perez"
+        },
+        {
+            "id": 2,
+            "email": "pe.caceres@duocuc.cl",
+            "Nombre": "Pedro Caceres"
+        }
+    ]
+}
+

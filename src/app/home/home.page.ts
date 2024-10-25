@@ -4,7 +4,8 @@ import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
 import { AnimationController} from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
-
+import { Storage } from '@ionic/storage-angular';
+import { ApiService } from '../Serivicioapi/api.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,9 @@ export class HomePage  implements OnInit{
 
   constructor(
     private animationCtrl: AnimationController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private storage: Storage,
+    private api:ApiService
   ) {}
 
   onScroll(event:any){
@@ -52,6 +55,17 @@ export class HomePage  implements OnInit{
         this.userEmail = params ['email'] || 'Usuario'
       });
       this.animateCards();
+    }
+
+    async verStorage(){
+      const email = await this.storage.get("emailUsuario");
+      console.log("El email es: "+ email) 
+    }
+
+    obtenerUsuario(){
+      this.api.obtenerUsuario().subscribe((respuesta) =>{
+        console.log(respuesta)
+      })
     }
   }
 
