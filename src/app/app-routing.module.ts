@@ -9,6 +9,16 @@ const routes: Routes = [
     
   },
   {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+
+  {
+    path: 'editar',
+    loadChildren: () => import('./editar/editar.module').then( m => m.EditarPageModule)
+  },
+
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -38,6 +48,8 @@ const routes: Routes = [
     redirectTo: 'error',
     pathMatch: 'full'
   },
+
+
 
 
 ];

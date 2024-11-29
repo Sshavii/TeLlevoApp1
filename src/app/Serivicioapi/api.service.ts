@@ -7,19 +7,13 @@ import { Observable, retry } from 'rxjs';
 })
 export class ApiService {
 
-  apiURL = 'http://localhost:3000'
-
   constructor(private http:HttpClient) { }
+  listado: any = [];
+  item : any;
+  private urlAPi = 'http://localhost:3000'
 
-  getPosts(id: any) {
-    return this.http.get('${this.apiURL}/posts/${id}');
-  }
 
-  obtenerUsuario(): Observable<any>{
-    return this.http.get(this.apiURL+'/posts/+id').pipe(
-      retry(3)
-    );
-  }
+  
 
   crearUsuario(){
 

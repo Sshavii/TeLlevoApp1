@@ -6,6 +6,7 @@ import { AnimationController} from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { ApiService } from '../Serivicioapi/api.service';
+import { UserI } from '../common/models/services/user.models';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,8 @@ export class HomePage  implements OnInit{
     private route: ActivatedRoute,
     private storage: Storage,
     private api:ApiService
-  ) {}
+  ) {
+  }
 
   onScroll(event:any){
     const scrollTop = event.detail.scrollTop;
@@ -61,11 +63,7 @@ export class HomePage  implements OnInit{
       const email = await this.storage.get("emailUsuario");
       console.log("El email es: "+ email) 
     }
-
-    obtenerUsuario(){
-      this.api.obtenerUsuario().subscribe((respuesta) =>{
-        console.log(respuesta)
-      })
-    }
   }
+
+  
 

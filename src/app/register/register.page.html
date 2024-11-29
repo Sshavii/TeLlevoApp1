@@ -21,11 +21,16 @@
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <ion-item>
             <ion-label position="floating">Nombre de Usuario</ion-label>
-            <ion-input type="text" formControlName="username"></ion-input>
+            <ion-input [(ngModel)]="newUser.nombre" type="text" formControlName="username"></ion-input>
           </ion-item>
           <ion-text color="danger" *ngIf="registerForm.get('username')?.hasError('required') && registerForm.get('username')?.touched">
             El nombre de usuario es requerido.
           </ion-text>
+
+          <ion-item>
+            <ion-label position="floating">Edad</ion-label>
+            <ion-input [(ngModel)]="newUser.edad" type="text" formControlName="age"></ion-input>
+          </ion-item>
 
           <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
@@ -43,9 +48,15 @@
             Las contraseñas no coinciden.
           </ion-text>
 
-          <ion-button type="submit" expand="block" color="primary" [disabled]="registerForm.invalid">
+          <ion-button (click)="save()" type="submit" expand="block" color="primary" [disabled]="registerForm.invalid">
             Registrarse
           </ion-button>
+
+          @if (cargando) {
+            <div style="text-align: center;">
+              <ion-spinner name="bubbles"></ion-spinner>
+            </div>
+          }
         </form>
 
         <ion-text color="primary" class="back-to-login-text">
