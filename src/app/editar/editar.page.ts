@@ -3,23 +3,21 @@ import { UserI } from '../common/models/services/user.models';
 import { FirestoreService } from '../common/services/firestore.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-editar',
   templateUrl: './editar.page.html',
   styleUrls: ['./editar.page.scss'],
 }) 
 export class EditarPage implements OnInit {
-
   newUser: UserI;
   cargando: boolean = false;
   users: UserI[] = [];
-  registerForm: FormGroup;
+  editForm: FormGroup;
   
-  constructor(private firestoreService : FirestoreService,
-    private formBuilder: FormBuilder
-  ) {     this.registerForm = this.formBuilder.group({
-    username: ['', [Validators.required]],
-    age: ['', [Validators.required]], });
+  
+  constructor(private firestoreService : FirestoreService
+  ) {     
     this.loadusers();
     this.initUser();
   }
@@ -28,11 +26,11 @@ export class EditarPage implements OnInit {
   }
 
   onSubmit() {
-    if (this.registerForm.valid) {
-      console.log('Formulario de registro válido', this.registerForm.value);
+    if (this.editForm.valid) {
+      console.log('Formulario de edicion válido', this.editForm.value);
       // Lógica para el registro (por ejemplo, enviar datos al servidor)
     } else {
-      console.log('Formulario de registro inválido');
+      console.log('Formulario de edicion inválido');
     }
   }
 
@@ -52,10 +50,11 @@ export class EditarPage implements OnInit {
     }
   }
 
-  async save(){
-    this.cargando = true;
-    await this.firestoreService.createDocumentID(this.newUser, "Usuarios", this.newUser.id)
-    this.cargando = false;
+
+  
+  edit(user: UserI){
+    console.log('edit -> ', user)
+    this.newUser = user;
   }
 
 }

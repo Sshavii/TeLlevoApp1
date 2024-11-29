@@ -4,27 +4,57 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-card>
+ <ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre de Usuario</ion-label>
+        <ion-input [(ngModel)]="newUser.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input [(ngModel)]="newUser.edad"></ion-input>
+      </ion-item>
+ </ion-item>
+</ion-card>
+    <div style="margin: 20px;">
+      <ion-button (click)="save()" expand="block" color="primary" shape="round">
+        Guardar
+      </ion-button>
+    </div>
+
+      @if (cargando) {
+        <div style="text-align: center;">
+          <ion-spinner name="bubbles"></ion-spinner>
+        </div>
+      }
+
+
+
   <ion-list>
-  @for (user of users; track $index) {
+    @for (user of users; track $index) {
+ 
+    @if (user) {
   <ion-item>
     <ion-label>
       Nombre: {{user.nombre}}
       <p>Edad: {{user.edad}}</p>
-      <ion-buttons class="pbuttons">
-        <ion-button (click)="edit(user)" [routerLink]="['/editar']">
-          <ion-icon slot="icon-only" name="create"></ion-icon>
-        </ion-button>
-        
-        <ion-button (click)="delete(user)">
-          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
     </ion-label>
+    <ion-buttons class="pbuttons">
+      <ion-button (click)="edit(user)">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+      
+      <ion-button (click)="delete(user)">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-item>
   }
+ }
 </ion-list>
-</ion-content>
+
+
+
 <ion-footer [class.hidden]="hideFooter">
   <ion-toolbar color="header">
     <ion-buttons slot="start">
