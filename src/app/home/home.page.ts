@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { ApiService } from '../Serivicioapi/api.service';
 import { UserI } from '../common/models/services/user.models';
+import { DireccionComponent } from './Components/direccion/direccion.component';
 
 @Component({
   selector: 'app-home',
