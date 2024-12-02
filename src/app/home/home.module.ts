@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { DireccionComponent } from './Components/direccion/direccion.component';
 import { MapDireccionComponent } from './Components/map-direccion/map-direccion.component';
 import { RouterModule } from '@angular/router';
+import { PlaceDetailComponent } from './place-detail/place-detail.component';
   
 
 
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     HomePageRoutingModule,
     RouterModule,
     DireccionComponent,
-    MapDireccionComponent
+    MapDireccionComponent,
+    PlaceDetailComponent
   ],
   declarations: [HomePage]
   
