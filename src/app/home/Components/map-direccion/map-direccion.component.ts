@@ -25,12 +25,13 @@ export class MapDireccionComponent  implements OnInit {
   ) { }
 
   ionViewDidEnter(){
-   this.menuController.enable(false, 'main')
+   this.menuController.enable(false, 'main');
    this.initMap();
   }
 
   ionViewDidLeave(){
-   this.menuController.enable(true, 'main')
+   this.menuController.enable(true, 'main');
+   this.map?.destroy();
   }
 
   async initMap(){
@@ -48,14 +49,15 @@ export class MapDireccionComponent  implements OnInit {
     });
 
     this.setMarkerDemo();
-    this.setPlacesDemo();
-    this.addListener();
+    //this.setPlacesDemo();
+    //this.addListener();
+    this.setMyLocation()
 
-    this.map.enableTrafficLayer(true);
+    //this.map.enableTrafficLayer(true);
 
-    this.map.setOnMapClickListener( res => {
-      console.log('setOnMapClickListener -> ', res);
-    });
+    //this.map.setOnMapClickListener( res => {
+      //console.log('setOnMapClickListener -> ', res);
+    //});
 
     this.map.enableCurrentLocation(true);
     };
@@ -158,6 +160,7 @@ export class MapDireccionComponent  implements OnInit {
     this.myLocation.id = id;
     //this.centerMarker(this.myLocation.marker);
     this.centerMarkerWithBounds(this.myLocation.marker);
+    this.showDetailMarker(this.myLocation)
   }
 
   centerMarkerWithBounds(marker: Marker){
