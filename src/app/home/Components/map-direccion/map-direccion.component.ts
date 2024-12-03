@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule, MenuController, ModalController } from '@ionic/angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { GoogleMap, LatLngBounds, Marker } from '@capacitor/google-maps';
+import { GoogleMap, LatLngBounds, Marker, Polyline } from '@capacitor/google-maps';
 import { environment } from 'src/environments/environment';
 import { PlaceDetailComponent } from '../../place-detail/place-detail.component';
+
 
 const apiKey = environment.firebaseConfig.apiKey;
 
@@ -73,6 +74,8 @@ export class MapDireccionComponent  implements OnInit {
     this.map.addMarker(marker)
   }
 
+
+
   
   setPlacesDemo(){
     places.forEach(async (place) => {
@@ -110,6 +113,8 @@ export class MapDireccionComponent  implements OnInit {
       }
     });
   }
+
+  
 
   setMyLocation(){
       
@@ -190,8 +195,11 @@ export class MapDireccionComponent  implements OnInit {
     })
   }
 
+  
+
 
   ngOnInit() {}
+
 
 }
 
