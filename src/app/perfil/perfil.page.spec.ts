@@ -5,7 +5,10 @@ describe('PerfilPage', () => {
   let component: PerfilPage;
   let fixture: ComponentFixture<PerfilPage>;
 
-  beforeEach(() => {
+  beforeEach( async () => {
+    await TestBed.configureTestingModule({
+      declarations: [PerfilPage]
+    }).compileComponents
     fixture = TestBed.createComponent(PerfilPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
