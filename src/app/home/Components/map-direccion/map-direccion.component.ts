@@ -1,3 +1,5 @@
+/// <reference types="@types/google.maps" />
+
 import { Component, OnInit } from '@angular/core';
 import { IonicModule, MenuController, ModalController } from '@ionic/angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
